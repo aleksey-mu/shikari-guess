@@ -3,7 +3,7 @@ const TEXTCONTAINER = document.querySelector('.text-container');
 
 const tracks = [`Acid Nation`,
 
-`Frozen Landscape`
+`Frozen Landscape`,
 
 `Adieu`,
 `Airfield`, 
