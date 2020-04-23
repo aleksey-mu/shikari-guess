@@ -2,6 +2,9 @@ const apiURL = 'https://api.lyrics.ovh';
 const TEXTCONTAINER = document.querySelector('.text-container');
 
 const tracks = [`Acid Nation`,
+
+`Frozen Landscape`
+
 `Adieu`,
 `Airfield`, 
 `All Eyes on the Saint`, 
@@ -120,8 +123,6 @@ const tracks = [`Acid Nation`,
 `, 
 `​the pressure’s on.
 `, 
-`Thereis a price on your head
-`, 
 `There’s a Price on Your Head
 `, 
 `The Revolt of the Atoms
@@ -151,8 +152,6 @@ const tracks = [`Acid Nation`,
 `Warm Smiles Do Not Make You Welcome Here
 `, 
 `We Can Breathe In Space
-`, 
-`We Can Breathe in Space, They Just Don’t Want Us to Escape
 `, 
 `When a Jealous Man Finds a Gun
 `, 

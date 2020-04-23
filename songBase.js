@@ -1,5 +1,8 @@
 
 const tracks = [`Acid Nation`,
+
+`Frozen Landscape`,
+
 `Adieu`,
 `Airfield`, 
 `All Eyes on the Saint`, 
@@ -118,8 +121,6 @@ const tracks = [`Acid Nation`,
 `, 
 `​the pressure’s on.
 `, 
-`Thereis a price on your head
-`, 
 `There’s a Price on Your Head
 `, 
 `The Revolt of the Atoms
@@ -150,11 +151,13 @@ const tracks = [`Acid Nation`,
 `, 
 `We Can Breathe In Space
 `, 
-`We Can Breathe in Space, They Just Don’t Want Us to Escape
-`, 
 `When a Jealous Man Finds a Gun
 `, 
 `Zzzonked`
 ]
 
 module.exports = tracks;
+
+const res = await fetch(`https://api.lyrics.ovh/v1/Enter Shikari/Frozen Landscape`);
+const data = await res.json();
+console.log(data)
