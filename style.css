@@ -14,8 +14,10 @@
 
 
 body {
-
+    background-image: url("shikari.jpg");
     text-align: center;
+    color: white;
+    background-size: cover;
 }
 
 h2 {
