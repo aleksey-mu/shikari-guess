@@ -14,9 +14,9 @@
 
 
 body {
-    background-image: url("shikari.jpg");
+    /* background-image: url("shikari.jpg"); */
     text-align: center;
-    color: white;
+    color: black;
     /* color: rgb(254, 242, 0); */
     /* background-repeat: no-repeat; */
     background-attachment: fixed;
