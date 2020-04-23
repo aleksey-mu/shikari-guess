@@ -1,3 +1,38 @@
 body {
     text-align: center;
 }
+
+h2 {
+    margin: 0;
+}
+.text-container {
+
+height: 150px;
+}
+
+.error-msg {
+    color: brown;
+}
+
+button {
+    background-color: white;
+
+    font-size: 20px;
+  /* background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%); */
+  cursor:pointer;
+  border: 2px solid black;
+  border-radius: 11px;
+}
+
+button:hover {
+    background-image: linear-gradient(-20deg, darken(#fc6076,10%) 0%, darken(#ff9a44,10%) 100%);
+}
+
+button:active {
+    position:relative;
+    top:1px;
+}
+
+button:focus {
+    outline:0;
+}

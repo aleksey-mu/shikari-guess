@@ -1,6 +1,5 @@
 const apiURL = 'https://api.lyrics.ovh';
-// const tracksArray = require('./songBase');
-// Search by song or artist
+const TEXTCONTAINER = document.querySelector('.text-container');
 
 
 const tracks = [`Acid Nation`,
@@ -101,19 +100,21 @@ const tracks = [`Acid Nation`,
 `, `Take My Country Back
 `, `The Appeal & the Mindsweep I
 `, `The Appeal & the Mindsweep II
-`, `The Bank of England
-`, `The Bearer of Bad News`]
+`, `The Bank of England`,
+`The Bearer of Bad News`];
+const artist = 'Enter Shikari';
+let liricsArray = [];
+let randomLineNumber = null;
+let songTitle = null;
 
-const artist = 'Enter Shikari'
-const songTitle = `${tracks[randomInteger(0, tracks.length - 1)]}`
-let lyrics = '';
-async function searchSongs() {
-    const res =  await fetch(`${apiURL}/v1/${artist}/${songTitle}`);
-  const data = await res.json();
-  lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
+
+function init() {
+    songTitle = `${tracks[randomInteger(0, tracks.length - 1)]}`
+    searchSongs();
 }
 
-searchSongs()
+init();
+
 
 function randomInteger(min, max) {
     // случайное число от min до (max+1)
@@ -121,16 +122,51 @@ function randomInteger(min, max) {
     return Math.floor(rand);
   }
 
-setTimeout(() => {
-    const liricsArray = lyrics.split('<br>').filter(Boolean);
-    console.log(liricsArray);
 
-    const randomLineNumber = randomInteger(0, liricsArray.length - 1)
+  async function searchSongs() {
+    try {
+      const res = await fetch(`${apiURL}/v1/${artist}/${songTitle}`);
+      const data = await res.json();
+      const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
+      liricsArray = lyrics.split('<br>').filter(Boolean);
+      console.log(liricsArray);
+      textRender();
+    } catch (error) {
+      console.log(error);
+      TEXTCONTAINER.innerHTML = `<div class="error-msg">Error. Server error or lyrics not found:</div>
+      <div class="error-msg">(${error})</div>`;
+    }
+  }
 
-    document.querySelector('body').innerHTML = `
+
+  function randomInteger(min, max) {
+    // случайное число от min до (max+1)
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+  }
+
+  function textRender() {
+    randomLineNumber = randomInteger(0, liricsArray.length - 1)
+    TEXTCONTAINER.innerHTML = `
     <h2><strong>${artist}</strong> - ${songTitle}</h2>
     <h3>Random line: №${randomLineNumber + 1}</h3>
     <span>${liricsArray[randomLineNumber]}</span>
   `;
+  }
 
-}, 500);
+
+
+
+
+  document.querySelector('.new-line').addEventListener('click', () => {
+    textRender();
+  })
+  
+  document.querySelector('.new-song').addEventListener('click', () => {
+    songTitle = `${tracks[randomInteger(0, tracks.length - 1)]}`
+    searchSongs();
+    // setTimeout(() => {
+    //     textRender()
+    // }, 700);
+
+  })
