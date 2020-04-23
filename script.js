@@ -157,7 +157,7 @@ function randomInteger(min, max) {
     randomLineNumber = randomInteger(0, liricsArray.length - 1)
     TEXTCONTAINER.innerHTML = `
     <h2 class="title">${artist} — ???</h2>
-    <h3>Random line: №${randomLineNumber + 1}</h3>
+    <h3>Song's line: №${randomLineNumber + 1}</h3>
     <span class="lyric-line">${liricsArray[randomLineNumber]}</span>
   `;
   }
