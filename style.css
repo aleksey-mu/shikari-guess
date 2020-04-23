@@ -1,4 +1,20 @@
+@font-face {
+    font-family: 'Nunito Regular';
+    src: url('fonts/Nunito-Regular') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito Bold';
+    src: url('fonts/Nunito-Bold') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
+
     text-align: center;
 }
 
@@ -15,14 +31,20 @@ height: 170px;
 }
 
 button {
-    margin: 5px auto;
+    font-family: 'Lato Bold', Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    margin: 15px auto;
     background-color: white;
-
-    font-size: 20px;
-  /* background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%); */
-  cursor:pointer;
-  border: 2px solid black;
-  border-radius: 11px;
+    font-size: 24px;
+    cursor:pointer;
+    border: 2px solid black;
+    border-radius: 11px;
+}
+.es-icon {
+    padding: 0 5px;
+    font-size: 30px;
 }
 
 .new-line {
