@@ -1,4 +1,5 @@
-const apiURL = 'https://api.lyrics.ovh';
+const apiURL1 = 'http://lyric-api.herokuapp.com/api/find/';
+const apiURL2 = 'https://api.lyrics.ovh';
 const TEXTCONTAINER = document.querySelector('.text-container');
 
 const tracks = [`Acid Nation`,
@@ -102,7 +103,8 @@ const tracks = [`Acid Nation`,
 `, `The Bank of England`,
 `The Bearer of Bad News`];
 const artist = 'Enter Shikari';
-let liricsArray = [];
+let liricsArray1 = [];
+let liricsArray2 = [];
 let randomLineNumber = null;
 let songTitle = null;
 
@@ -124,17 +126,33 @@ function randomInteger(min, max) {
 
   async function searchSongs() {
     try {
-      const res = await fetch(`${apiURL}/v1/${artist}/${songTitle}`);
+      const res = await fetch(`${apiURL1}${artist}/${songTitle}`);
       const data = await res.json();
-      const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
-      liricsArray = lyrics.split('<br>').filter(Boolean);
-      console.log(liricsArray);
-      textRender();
+      console.log('herokuapp', data)
+      const lyrics = data.lyric.replace(/(\r\n|\r|\n)/g, '<br>');
+      // liricsArray1 = lyrics.split('<br>').filter(Boolean);
+      liricsArray1 = lyrics;
     } catch (error) {
       console.log(error);
-      songTitle = `${tracks[randomInteger(0, tracks.length - 1)]}`
-      searchSongs()
+      // songTitle = `${tracks[randomInteger(0, tracks.length - 1)]}`
+      // searchSongs()
     }
+
+    try {
+      const res = await fetch(`${apiURL2}/v1/${artist}/${songTitle}`);
+      const data = await res.json();
+      console.log('lyrics.ovh', data)
+
+      const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
+      // liricsArray2 = lyrics.split('<br>').filter(Boolean);
+      liricsArray2 = lyrics;
+      
+    } catch (error) {
+      console.log(error);
+      // songTitle = `${tracks[randomInteger(0, tracks.length - 1)]}`
+      // searchSongs()
+    }
+    textRender();
   }
 
 
@@ -145,11 +163,16 @@ function randomInteger(min, max) {
   }
 
   function textRender() {
-    randomLineNumber = randomInteger(0, liricsArray.length - 1)
+    randomLineNumber = randomInteger(0, liricsArray1.length - 1)
+    // console.log('herokuapp', liricsArray1)
+    // console.log('lyrics.ovh', liricsArray2)
     TEXTCONTAINER.innerHTML = `
     <h2 class="title">${artist} — ???</h2>
     <h3>Random line: №${randomLineNumber + 1}</h3>
-    <span class="lyric-line">${liricsArray[randomLineNumber]}</span>
+    <div style="display:flex;">
+    <div>herokuapp<br>${liricsArray1}</div>
+    <div>lyrics.ovh<br>${liricsArray2}</div>
+    </div>
   `;
   }
 
