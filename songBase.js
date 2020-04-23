@@ -24,6 +24,7 @@ const tracks = [`Acid Nation`,
 `,
  `Empty
 `, 
+`Enter Shikari`,
 `Fanfare for the Conscious Man
 `,
  `Gandhi Mate, Gandhi
@@ -92,69 +93,68 @@ const tracks = [`Acid Nation`,
 `, `Stop the Clocks
 `, `Supercharge
 `, `System…
-`, `Take It Back
-`, `The Qemists
 `, `Take My Country Back
 `, `The Appeal & the Mindsweep I
 `, `The Appeal & the Mindsweep II
 `, `The Bank of England
-`, `The Bearer of Bad News`]
+`, `The Bearer of Bad News`,
 
 
-// `{ The Dreamer’s Hotel }
-// `, 
-// `The Feast
-// `, 
-// `THE GREAT UNKNOWN
-// `, 
-// `The Jester
-// `, 
-// `​thē kĭñg
-// `, 
-// `The Last Garrison
-// `, 
-// `The One True Colour
-// `, 
-// `The Paddington Frisk
-// `, 
-// `​the pressure’s on.
-// `, 
-// `Thereis a price on your head
-// `, 
-// `There’s a Price on Your Head
-// `, 
-// `The Revolt of the Atoms
-// `, 
-// `The Sights
-// `, 
-// `The Spark
-// `, 
-// `Thumper
-// `, 
-// `T.I.N.A.
-// `, 
-// `Today Won’t Go Down in History
-// `, 
-// `Torn Apart
-// `, 
-// `Tribalism
-// `, 
-// `Undercover Agents
-// `, 
-// `Wall
-// `, 
-// `Waltzing Off The Face Of The Earth (I. Crescendo)
-// `, 
-// `Waltzing off the Face of the Earth (II. Piangevole)
-// `, 
-// `Warm Smiles Do Not Make You Welcome Here
-// `, 
-// `We Can Breathe In Space
-// `, 
-// `We Can Breathe in Space, They Just Don’t Want Us to Escape
-// `, 
-// `When a Jealous Man Finds a Gun
-// `, 
-// `Zzzonked`
+`{ The Dreamer’s Hotel }
+`, 
+`The Feast
+`, 
+`THE GREAT UNKNOWN
+`, 
+`The Jester
+`, 
+`​thē kĭñg
+`, 
+`The Last Garrison
+`, 
+`The One True Colour
+`, 
+`The Paddington Frisk
+`, 
+`​the pressure’s on.
+`, 
+`Thereis a price on your head
+`, 
+`There’s a Price on Your Head
+`, 
+`The Revolt of the Atoms
+`, 
+`The Sights
+`, 
+`The Spark
+`, 
+`Thumper
+`, 
+`T.I.N.A.
+`, 
+`Today Won’t Go Down in History
+`, 
+`Torn Apart
+`, 
+`Tribalism
+`, 
+`Undercover Agents
+`, 
+`Wall
+`, 
+`Waltzing Off The Face Of The Earth (I. Crescendo)
+`, 
+`Waltzing off the Face of the Earth (II. Piangevole)
+`, 
+`Warm Smiles Do Not Make You Welcome Here
+`, 
+`We Can Breathe In Space
+`, 
+`We Can Breathe in Space, They Just Don’t Want Us to Escape
+`, 
+`When a Jealous Man Finds a Gun
+`, 
+`Zzzonked`
+]
 
 module.exports = tracks;
