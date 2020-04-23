@@ -1,7 +1,6 @@
 const apiURL = 'https://api.lyrics.ovh';
 const TEXTCONTAINER = document.querySelector('.text-container');
 
-
 const tracks = [`Acid Nation`,
 `Adieu`,
 `Airfield`, 
@@ -148,7 +147,7 @@ function randomInteger(min, max) {
   function textRender() {
     randomLineNumber = randomInteger(0, liricsArray.length - 1)
     TEXTCONTAINER.innerHTML = `
-    <h2><strong>${artist}</strong> - ${songTitle}</h2>
+    <h2 class="title">${artist} — ???</h2>
     <h3>Random line: №${randomLineNumber + 1}</h3>
     <span>${liricsArray[randomLineNumber]}</span>
   `;
@@ -165,8 +164,8 @@ function randomInteger(min, max) {
   document.querySelector('.new-song').addEventListener('click', () => {
     songTitle = `${tracks[randomInteger(0, tracks.length - 1)]}`
     searchSongs();
-    // setTimeout(() => {
-    //     textRender()
-    // }, 700);
+  })
 
+  document.querySelector('.show-answer').addEventListener('click', () => {
+    document.querySelector('.title').innerText = `${artist} — ${songTitle}`;
   })

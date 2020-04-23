@@ -7,7 +7,7 @@ h2 {
 }
 .text-container {
 
-height: 150px;
+height: 170px;
 }
 
 .error-msg {
@@ -15,6 +15,7 @@ height: 150px;
 }
 
 button {
+    margin: 5px auto;
     background-color: white;
 
     font-size: 20px;
@@ -22,6 +23,16 @@ button {
   cursor:pointer;
   border: 2px solid black;
   border-radius: 11px;
+}
+
+.new-line {
+    background-color: rgb(113, 191, 69);
+}
+.new-song {
+    background-color: rgb(254, 242, 0);
+}
+.show-answer {
+    background-color: rgb(140, 216, 248);
 }
 
 button:hover {
