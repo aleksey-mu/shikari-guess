@@ -1,5 +1,5 @@
 
-const tracks = [
+const songs = [
 `Acid Nation`,
 `Adieu`,
 `Airfield`,
@@ -103,6 +103,6 @@ const tracks = [
 ]
 
 // module.exports = tracks;
-module.exports = { tracks }
+// module.exports = { tracks }
 
 

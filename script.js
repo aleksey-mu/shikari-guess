@@ -3,6 +3,7 @@ const TEXTCONTAINER = document.querySelector('.text-container');
 // import { tracks } from "songBase.js"
 // const { tracks } = require('songBase');
 
+
 const tracks = [
   `Acid Nation`,
   `Adieu`,
@@ -107,10 +108,8 @@ const tracks = [
 ]
 
 
-
-
-
 const artist = 'Enter Shikari';
+let isTitleShown = false;
 let liricsArray = [];
 let randomLineNumber = null;
 let songTitle = null;
@@ -122,13 +121,6 @@ function init() {
 }
 
 init();
-
-
-function randomInteger(min, max) {
-    // случайное число от min до (max+1)
-    let rand = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
-  }
 
 
   async function searchSongs() {
@@ -156,14 +148,11 @@ function randomInteger(min, max) {
   function textRender() {
     randomLineNumber = randomInteger(0, liricsArray.length - 1)
     TEXTCONTAINER.innerHTML = `
-    <h2 class="title">${artist} — ???</h2>
+    <h2 class="title">${artist} — ${isTitleShown ? songTitle : '???'}</h2>
     <h3>Song's line: №${randomLineNumber + 1}</h3>
     <span class="lyric-line">${liricsArray[randomLineNumber]}</span>
   `;
   }
-
-
-
 
 
   document.querySelector('.new-line').addEventListener('click', () => {
@@ -172,31 +161,14 @@ function randomInteger(min, max) {
   
   document.querySelector('.new-song').addEventListener('click', () => {
     songTitle = `${tracks[randomInteger(0, tracks.length - 1)]}`
+    isTitleShown = false;
     searchSongs();
   })
 
   document.querySelector('.show-answer').addEventListener('click', () => {
+    isTitleShown = true;
     document.querySelector('.title').innerText = `${artist} — ${songTitle}`;
   })
-
-
-
-
-
-  // async function searchSongsTest(song) {
-  //   try {
-  //     const res = await fetch(`${apiURL}/v1/${artist}/${song}`);
-  //     const data = await res.json();
-  //     const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
-  //     console.log('Good');
-  //   } catch (error) {
-  //     console.log(error, song);
-  //   }
-  // }
-
-  // tracks.forEach(song => {
-  //   searchSongsTest(song);
-  // });
 
 
 
