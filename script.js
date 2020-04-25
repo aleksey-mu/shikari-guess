@@ -146,7 +146,12 @@ init();
   }
 
   function textRender() {
-    randomLineNumber = randomInteger(0, liricsArray.length - 1)
+    const newLine = randomInteger(0, liricsArray.length - 1)
+    if (newLine === randomLineNumber) {
+      textRender();
+      return;
+    }
+    randomLineNumber = newLine;
     TEXTCONTAINER.innerHTML = `
     <h2 class="title">${artist} — ${isTitleShown ? songTitle : '???'}</h2>
     <h3>Song's line: №${randomLineNumber + 1}</h3>
