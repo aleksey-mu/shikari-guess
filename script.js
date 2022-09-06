@@ -130,8 +130,8 @@ async function searchSongs() {
 	} catch (error) {
 		console.log(error);
 		songTitle = `${tracks[randomInteger(0, tracks.length - 1)]}`;
-		searchSongs();
-	}
+		const timeout = setTimeout(searchSongs, 500);
+		}
 }
 
 function randomInteger(min, max) {
